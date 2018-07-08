@@ -1,8 +1,8 @@
 from django.contrib import admin
-from frist_app.models import Topic, webPage, AccessRecord
+from frist_app.models import Topic, Webpage, AccessRecord
 
 # Register your models here.
 
 admin.site.register(Topic)
-admin.site.register(webPage)
+admin.site.register(Webpage)
 admin.site.register(AccessRecord)

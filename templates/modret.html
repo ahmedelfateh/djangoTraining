@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>model return</title>
+    <link rel="stylesheet" href="{% static "css/color.css" %}">
+  </head>
+  <body>
+    <h1> Return from Models.py </h1>
+
+    <div class="table">
+
+      {% if access_records %}
+
+      <table id="new">
+        <thead>
+          <th>site name</th>
+          <th>date access</th>
+        </thead>
+      {% for acc in access_records %}
+      <tr>
+        <td>{{ acc.name }}</td>
+        <td>{{ acc.date }}</td>
+      </tr>
+      {% endfor %}
+      </table>
+      {% else %}
+          <p> No access Access Record here </p>
+      {% endif %}
+
+    </div>
+
+
+  </body>
+</html>
