@@ -23,6 +23,7 @@ urlpatterns = [
     url(r'^$', views.index, name="index"),
     url(r'^help/', views.help, name="help"),
     # url(r'^mod/', views.modtest, name="modtest"),
+    url(r'^userdata/', views.userFunc, name="userdata"),
     url(r'^mod/', views.modnew, name="model"),
     url(r'^admin/', admin.site.urls),
 ]

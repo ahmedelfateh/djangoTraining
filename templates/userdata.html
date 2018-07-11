@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+ <head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href= "{% static "css/color.css"%}">
+  <title>new users</title>
+ </head>
+ <body>
+  <h1>user data</h1>
+
+  {% if users_key %}
+  <ol>
+   {% for person in users_key %}
+   <ul>
+    <li>Frist name:{{person.frist_Name}}</li>
+    <li>last name:{{person.last_Name}}</li>
+    <li>Email:{{person.email}}</li>
+   </ul>
+   {% endfor %}
+  </ol>
+  {% endif %}
+ </body>
+</html>
