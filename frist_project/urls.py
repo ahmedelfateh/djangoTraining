@@ -26,5 +26,7 @@ urlpatterns = [
     url(r'^userdata/', views.userFunc, name="userdata"),
     url(r'^mod/', views.modnew, name="model"),
     url(r'^form', views.formName, name="form"),
+    #url for the landing page
+    url(r'^lp/', views.newUser, name="lp"),
     url(r'^admin/', admin.site.urls),
 ]

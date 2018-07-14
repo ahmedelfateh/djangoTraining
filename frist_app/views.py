@@ -1,7 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from frist_app.models import Topic, Webpage, AccessRecord, user
+# from frist_app import models
 from frist_app import forms
+from frist_app.forms import newUserForm
 
 # Create your views here.
 
@@ -34,7 +36,6 @@ def formName(nForm):
     form = forms.formName()
     if nForm.method == "POST":
         form = forms.formName(nForm.POST)
-
     if form.is_valid():
         print("validatin is good!")
         print("Name:" + form.cleaned_data['name'])
@@ -43,3 +44,17 @@ def formName(nForm):
         print("Text:" + form.cleaned_data['text'])
     form_dict = {"form":form}
     return render (nForm, "forms.html", context=form_dict)
+
+#view to make users submeting thier name / mail / phone
+def newUser(request):
+    form = newUserForm()
+    if request.method == "POST":
+        form = newUserForm(request.POST)
+
+        if form.is_valid():
+            form.save(commit=True)
+            # return newUser(request)
+        else:
+            print ("don't work")
+    form_dict = {"form":form}
+    return render (request, 'landingpage.html', context=form_dict)

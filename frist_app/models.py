@@ -21,8 +21,8 @@ class AccessRecord(models.Model):
         return str(self.date)
 
 class user(models.Model):
-    frist_Name = models.CharField(max_length=20, default='SOME STRING')
-    last_Name = models.CharField(max_length=20, default='SOME STRING')
-    email = models.EmailField(max_length=50, unique=True, default='SOME STRING')
+    frist_Name = models.CharField(max_length=20)
+    last_Name = models.CharField(max_length=20)
+    email = models.EmailField(max_length=50, unique=True)
     def __str__(self):
         return self.frist_Name
