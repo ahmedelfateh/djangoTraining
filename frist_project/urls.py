@@ -25,5 +25,6 @@ urlpatterns = [
     # url(r'^mod/', views.modtest, name="modtest"),
     url(r'^userdata/', views.userFunc, name="userdata"),
     url(r'^mod/', views.modnew, name="model"),
+    url(r'^form', views.formName, name="form"),
     url(r'^admin/', admin.site.urls),
 ]
